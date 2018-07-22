@@ -10,7 +10,7 @@
                         <div class="card-body">
 
                             <div class="card-deck">
-                                @forelse($questions as $question)
+                                @foreach($questions as $question)
                                     <div class="col-sm-4 d-flex align-items-stretch">
                                         <div class="card mb-3 ">
                                             <div class="card-header">
@@ -33,9 +33,8 @@
                                             </div>
                                         </div>
                                     </div>
-                                @empty
-                                    There are no questions to view, you can  create a question.
-                                @endforelse
+
+                                @endforeach
 
 
                             </div>
@@ -51,4 +50,5 @@
                 </div>
             </div>
         </div>
+    </div>
 @endsection
