@@ -38,9 +38,8 @@
                                     </div>
 
                                 @empty
-                                    <a class="btn btn-primary" href="{{ route('questions.create') }}">
-                                        There are no question to view, click here to create a question
-                                    </a>
+
+                                        There are no question to view.
                                 @endforelse
 
 
