@@ -1,17 +1,19 @@
 <?php
-
+$heroku_db_url = parse_url(env('DATABASE_URL', "postgres://forge:forge@localhost:5432/forge"));
 return [
 
-    /*
-    |--------------------------------------------------------------------------
-    | Default Database Connection Name
-    |--------------------------------------------------------------------------
-    |
-    | Here you may specify which of the database connections below you wish
-    | to use as your default connection for all database work. Of course
-    | you may use many connections at once using the Database library.
-    |
-    */
+
+
+/*
+|--------------------------------------------------------------------------
+| Default Database Connection Name
+|--------------------------------------------------------------------------
+|
+| Here you may specify which of the database connections below you wish
+| to use as your default connection for all database work. Of course
+| you may use many connections at once using the Database library.
+|
+*/
 
     'default' => env('DB_CONNECTION', 'mysql'),
 
@@ -77,6 +79,16 @@ return [
             'charset' => 'utf8',
             'prefix' => '',
         ],
+    'pg-heroku' => [
+        'driver' => 'pgsql',
+        'host' => $heroku_db_url['host'],
+        'database' => substr($heroku_db_url['path'], 1),
+        'username' => $heroku_db_url['user'],
+        'password' => $heroku_db_url['pass'],
+        'charset' => 'utf8',
+        'prefix' => '',
+        'schema' => 'public',
+    ],
 
     ],
 
