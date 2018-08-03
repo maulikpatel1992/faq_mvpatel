@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Question;
 use Illuminate\Support\Facades\Auth;
-
+use Illuminate\Support\Facades\DB;
 class QuestionController extends Controller
 {
     public function __construct()
@@ -21,7 +21,11 @@ class QuestionController extends Controller
 
     public function index()
     {
-        //
+
+             $question = DB::select('SELECT * FROM questions');
+
+                return view('test')->with('questions', $question);
+
     }
 
     /**
