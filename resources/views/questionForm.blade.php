@@ -15,6 +15,8 @@
                         <div class="form-group">
                             {!! Form::label('body', 'Body') !!}
                             {!! Form::text('body', $question->body, ['class' => 'form-control','required' => 'required']) !!}
+                            {!! Form::label('question_tag', 'Question Catagory') !!}
+                            {!! Form::text('question_tag', $question->question_tag, ['class' => 'form-control','required' => 'required']) !!}
                         </div>
                         <button class="btn btn-success float-right" value="submit" type="submit" id="submit">Save
                         </button>

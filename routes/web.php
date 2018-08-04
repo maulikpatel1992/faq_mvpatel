@@ -15,8 +15,12 @@
     return view('welcome');
 });*/
 Route::get('/', 'TestController@index')->name('test');
-
-
+Route::get('/all', 'TestController@index')->name('test.all');
+Route::get('/php', 'TestController@php')->name('test.tagphp');
+Route::get('/sql', 'TestController@sql')->name('test.tagsql');
+Route::get('/java', 'TestController@java')->name('test.tagjava');
+Route::get('/laravel', 'TestController@laravel')->name('test.taglaravel');
+Route::get('/other', 'TestController@other')->name('test.tagother');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

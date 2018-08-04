@@ -28,12 +28,26 @@
 
             @guest
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
-                </a>
-            @else
-                <a class="navbar-brand" href="{{ route('home') }}">
                     Home
                 </a>
+                <ul class="navbar-nav mr-auto">
+                <li><a class="navbar-brand" href="{{ route('test.tagphp') }}">php</a></li>
+                    <li><a class="navbar-brand" href="{{ route('test.tagsql') }}">sql</a></li>
+                    <li><a class="navbar-brand" href="{{ route('test.tagjava') }}">Java</a></li>
+                    <li><a class="navbar-brand" href="{{ route('test.taglaravel') }}">Laravel</a></li>
+                    <li><a class="navbar-brand" href="{{ route('test.tagother') }}">Other</a></li>
+                </ul>
+            @else
+                <a class="navbar-brand" href="{{ route('test.all') }}">
+                    Home
+                </a>
+                <ul class="navbar-nav mr-auto">
+                    <li><a class="navbar-brand" href="{{ route('test.tagphp') }}">php</a></li>
+                    <li><a class="navbar-brand" href="{{ route('test.tagsql') }}">sql</a></li>
+                    <li><a class="navbar-brand" href="{{ route('test.tagjava') }}">Java</a></li>
+                    <li><a class="navbar-brand" href="{{ route('test.taglaravel') }}">Laravel</a></li>
+                    <li><a class="navbar-brand" href="{{ route('test.tagother') }}">Other</a></li>
+                </ul>
             @endguest
 
 
@@ -57,6 +71,9 @@
                         <li><a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a></li>
 
                     @else
+                        <a class="navbar-brand" href="{{ route('home') }}">
+                            My Questions
+                        </a>
                         <li class="nav-item dropdown">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                 My Account <span class="caret"></span>
