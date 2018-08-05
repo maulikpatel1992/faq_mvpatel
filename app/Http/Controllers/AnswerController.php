@@ -125,4 +125,24 @@ class AnswerController extends Controller
         return redirect()->route('questions.show',['question_id' => $question])->with('message', 'Delete');
 
     }
+
+    public function vote($question,  $answer)
+    {
+        $answer = Answer::find($answer);
+        $answer->upvote = $answer->upvote + 1;
+        $answer->save();
+        //DB::table('answers')->whereId($answer)->increment('upvote');
+        return redirect()->route('questions.show', ['question_id' => $question]);
+
+    }
+
+    public function downvote($question,  $answer)
+    {
+        $answer = Answer::find($answer);
+        $answer->downvote = $answer->downvote + 1;
+        $answer->save();
+        //DB::table('answers')->whereId($answer)->increment('upvote');
+        return redirect()->route('questions.show', ['question_id' => $question]);
+
+    }
 }

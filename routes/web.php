@@ -35,6 +35,9 @@ Route::delete('/user/{user_id}/profile/{profile_id}', 'ProfileController@destroy
 
 Route::get('/questions/{question_id}/answers/create', 'AnswerController@create')->name('answers.create');
 Route::get('/questions/{question_id}/answers/{answer_id}', 'AnswerController@show')->name('answers.show');
+Route::get('/questions/{question_id}/answers/{answer_id}/upvote', 'AnswerController@vote')->name('answers.vote');
+Route::get('/questions/{question_id}/answers/{answer_id}/downvote', 'AnswerController@downvote')->name('answers.downvote');
+
 Route::get('/questions/{question_id}/answers/{answer_id}/edit', 'AnswerController@edit')->name('answers.edit');
 Route::post('/questions/{question_id}/answers/', 'AnswerController@store')->name('answers.store');
 Route::patch('/questions/{question_id}/answer/{answer_id}', 'AnswerController@update')->name('answers.update');
