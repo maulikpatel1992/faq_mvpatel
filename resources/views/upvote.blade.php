@@ -19,9 +19,7 @@
                                 <div class="col-sm-4 d-flex align-items-stretch">
                                     <div class="card mb-3 ">
                                         <div class="card-header">
-                                            <small class="text-muted">
 
-                                            </small>
                                         </div>
                                         <div class="card-body">
                                             <p class="card-text">{{$question->body}}</p>
