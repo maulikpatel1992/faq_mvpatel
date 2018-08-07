@@ -65,14 +65,32 @@
 
                 <!-- Right Side Of Navbar -->
                 <ul class="navbar-nav ml-auto">
+
                     <!-- Authentication Links -->
                     @guest
                         <li><a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a></li>
-                        <li><a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a></li>
 
+                        <li><a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a></li>
+                        <div class="nav-item dropdown">
+                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
+                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                Sorted by <span class="caret"></span>
+                            </a>
+
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+
+                                <a class="dropdown-item" href="{{ route('upvote.sortbytime') }}">Most recent</a>
+                                <a class="dropdown-item" href="{{ route('upvote.sortbyvote') }}">Vote</a>
+
+                                <a class="dropdown-item" href="{{ route('upvote.sortbyanswer') }}">Answered</a>
+                                <a class="dropdown-item" href="{{ route('upvote.sortbyunanswer') }}">Unanswered</a>
+
+
+                            </div>
+                        </div>
                     @else
                         <a class="navbar-brand" href="{{ route('home') }}">
-                            My Questions
+                            Hello,
                         </a>
                         <li class="nav-item dropdown">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
@@ -99,7 +117,25 @@
                                     @csrf
                                 </form>
                             </div>
+
                         </li>
+                        <div class="nav-item dropdown">
+                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
+                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                Sorted by <span class="caret"></span>
+                            </a>
+
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+
+                                <a class="dropdown-item" href="{{ route('upvote.sortbytime') }}">Most recent</a>
+                                <a class="dropdown-item" href="{{ route('upvote.sortbyvote') }}">Vote</a>
+
+                                <a class="dropdown-item" href="{{ route('upvote.sortbyanswer') }}">Answered</a>
+                                <a class="dropdown-item" href="{{ route('upvote.sortbyunanswer') }}">Unanswered</a>
+
+
+                            </div>
+                        </div>
                     @endguest
                 </ul>
 

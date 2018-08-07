@@ -21,6 +21,12 @@ Route::get('/sql', 'TestController@sql')->name('test.tagsql');
 Route::get('/java', 'TestController@java')->name('test.tagjava');
 Route::get('/laravel', 'TestController@laravel')->name('test.taglaravel');
 Route::get('/other', 'TestController@other')->name('test.tagother');
+Route::get('/sortbyvote', 'TestController@sortbyvote')->name('upvote.sortbyvote');
+Route::get('/sortbyanswer', 'TestController@sortbyanswer')->name('upvote.sortbyanswer');
+Route::get('/sortbyunanswer', 'TestController@sortbyunanswer')->name('upvote.sortbyunanswer');
+Route::get('/sortbytime', 'TestController@sortbytime')->name('upvote.sortbytime');
+
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

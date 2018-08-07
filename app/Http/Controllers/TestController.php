@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Question;
-use Illuminate\Support\Facades\Auth;
+use App\Answer;
+use Illuminate\Pagination\Paginator;
+use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Support\Facades\DB;
 class TestController extends Controller
 {
@@ -56,4 +58,56 @@ class TestController extends Controller
         return view('test')->with('questions', $question);
 
     }
+
+    /**
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function sortbyvote()
+    {
+        $question = DB::table('questions')
+            -> leftjoin('answers', 'questions.id', '=', 'answers.question_id')
+            -> select('questions.*')
+            -> orderBy('answers.upvote', 'desc')
+            ->paginate(6);
+        /*$answer=Answer::where('upvote','1');
+
+         $question->id=$answer->question_id;
+          $question=Question::find($question);
+       //$question= question:: orderby('body','desc')->paginate(6);
+        //return view('upvote')->with('questions', $question);*/
+        return view('upvote')->with('questions', $question);
+    }
+
+    public function sortbyanswer()
+    {
+        $question = DB::table('answers')
+            -> join('questions', 'answers.question_id', '=', 'questions.id')
+            -> select('questions.*')
+            -> whereNotNull('answers.body')
+            ->paginate(6);
+
+        return view('upvote')->with('questions', $question);
+    }
+
+    public function sortbyunanswer()
+    {
+        $question = DB::table('questions')
+            -> leftjoin('answers', 'questions.id', '=', 'answers.question_id')
+            -> select('questions.*')
+            -> whereNull('answers.body')
+            ->paginate(6);
+
+        return view('upvote')->with('questions', $question);
+    }
+
+    public function sortbytime()
+    {
+        $question = DB::table('questions')
+            ->orderBy('created_at', 'desc')
+            -> select('questions.*')
+            ->paginate(6);
+
+        return view('upvote')->with('questions', $question);
+    }
 }
+
