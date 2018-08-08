@@ -73,5 +73,8 @@ User can view unanswered question, from list of all the questions by selecting �
 User can view only answered question, from list of all the questions by selecting “Answered” from “Sort by “ drop down menu. So it will be easy to find answered questions.
 <h5>10. Filter by Category</h5>
 Guest User as well as authorise user can view  all questions of same category such as “Laravel”, “php”, “sql”, “Java” and rest are from  “other” category using respective buttons placed at navigation bar. 
-<h5>11. Updated UI for Guest user</h5>
+<h5>11. Updated UI for Guest and Authorise user</h5>
 Guest users can get overview of all questions using “Home” button placed at navigation bar but without login or register, they can not view, answer  and vote.
+
+<h3>License</h3>
+This is open source code. Any user can modify this code for own use
