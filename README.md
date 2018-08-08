@@ -1,4 +1,4 @@
-#Welcome to Laravel QA Forum
+<h1>Welcome to Laravel QA Forum</h1>
 
 This is a very simple Laravel frame work based Quastion-Answer forum.
 <p>Git repository:</p>
@@ -11,55 +11,45 @@ https://github.com/maulikpatel1992/faq_mvpatel
 
 <h3>Setup/Installation<h3>
 
-<p>1. Clone given GitHub repository for this project locally
-onto your computer:
+<h6>1. Clone given GitHub repository for this project locally
+onto your computer:</h6>
 
-git clone https://github.com/maulikpatel1992/faq_mvpatel</p>
-2.. cd into your project:
-To move your terminal working location to the project file:
+        git clone https://github.com/maulikpatel1992/faq_mvpatel
+<h6>2.To move your terminal working location to the project file:</h6>
 
     cd faq_mvpatel
-3.. Install Composer Dependencies:
-    To install all of the project dependencies:
+<h6>3.Install Composer Dependencies:</h6>
     
     composer install
-4.. Install NPM Dependencies: 
-    Also install necessary NPM packages to move forward. This will install Vue.js, Bootstrap.css, Lodash, and Laravel Mix.
-    
+<h6>4.Install NPM Dependencies:</h6> 
+     
     npm install
-5.. Create a copy of your .env file:
-
+<h6>5. Create a copy of your .env file:</h6>
 
     cp .env.example .env
-6.. Generate an app encryption key:
+<h6>6. Generate an app encryption key:</h6>
 
      php artisan key:generate
-7.. Create an empty database for project using sqlite. 
+<h6>7. Create an empty database for project using sqlite.</h6> 
 
-8..In the .env file, add database information to allow Laravel to connect to the database
+<h6>8.In the .env file, add database information to allow Laravel to connect to the database</h6>
 
     B_CONNECTION=sqlite
-
     DB_DATABASE=Full path of /database.sqlite
-
     DB_HOST=127.0.0.1
-
     DB_PORT=3306
-
     DB_USERNAME=homestead
-
     DB_PASSWORD=secret
 
-9.. Migrate the database
+<h6>9. Migrate the database</h6>
     
     php artisan migrate
-
-10.. Seed the database
-    
-    
+<h6>10. Seed the database</h6>
+       
     php artisan db:seed
 
 <h3>Features:</h3>
+
 <h5>1. Basic user Registration and Login</h5>
 Any new user can register and  login to qa forum by Register and Login button. 
 
