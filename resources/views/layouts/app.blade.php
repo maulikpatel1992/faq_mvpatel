@@ -37,6 +37,8 @@
                     <li><a class="navbar-brand" href="{{ route('test.taglaravel') }}">Laravel</a></li>
                     <li><a class="navbar-brand" href="{{ route('test.tagother') }}">Other</a></li>
                 </ul>
+
+
             @else
                 <a class="navbar-brand" href="{{ route('test.all') }}">
                     Home
@@ -48,6 +50,7 @@
                     <li><a class="navbar-brand" href="{{ route('test.taglaravel') }}">Laravel</a></li>
                     <li><a class="navbar-brand" href="{{ route('test.tagother') }}">Other</a></li>
                 </ul>
+
             @endguest
 
 

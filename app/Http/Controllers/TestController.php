@@ -64,22 +64,19 @@ class TestController extends Controller
      */
     public function sortbyvote()
     {
+
         $question = DB::table('questions')
             -> leftjoin('answers', 'questions.id', '=', 'answers.question_id')
             -> select('questions.*')
             -> orderBy('answers.upvote', 'desc')
             ->paginate(6);
-        /*$answer=Answer::where('upvote','1');
 
-         $question->id=$answer->question_id;
-          $question=Question::find($question);
-       //$question= question:: orderby('body','desc')->paginate(6);
-        //return view('upvote')->with('questions', $question);*/
         return view('upvote')->with('questions', $question);
     }
 
     public function sortbyanswer()
     {
+
         $question = DB::table('answers')
             -> join('questions', 'answers.question_id', '=', 'questions.id')
             -> select('questions.*')
@@ -109,5 +106,7 @@ class TestController extends Controller
 
         return view('upvote')->with('questions', $question);
     }
+
+
 }
 
